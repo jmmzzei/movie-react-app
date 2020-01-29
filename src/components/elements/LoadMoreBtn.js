@@ -1,3 +1,3 @@
 import React from 'react'
 
-export default () => <div>Load MOre Button</div>
+export default () => <div>Load More Button</div>
