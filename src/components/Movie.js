@@ -13,13 +13,14 @@ export default ({ movieId }) => {
     console.log(movie);
     if(err) return <div>Something went wrong</div>
     if (loading) return <Spinner />
-console.log(movie);
+
+    const {runtime, budget, revenue} = movie
 
     return(
     <>
         <Navigation movie={movie.original_title}/>
         <MovieInfo movie={movie}/>
-        <MovieInfoBar time={movie.runtime} /> budget={movie.budget} revenue={movie.revenue}
+        <MovieInfoBar time={runtime} budget={budget} revenue={revenue} />
         <Grid header="Actors">
             {
                 movie.actiors.map(e => (

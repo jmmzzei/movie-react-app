@@ -18,13 +18,13 @@ import NoImage from './images/no_image.jpg'
 
 
 export default () => {
+    const [searchTerm, setSearchTerm] = useState('')
     const [
         {
             state: { movies, currentPage, totalPages, heroImage },
             loading,
             err
-        }, fetchMovies] = useHomeFetch()
-    const [searchTerm, setSearchTerm] = useState('')
+        }, fetchMovies] = useHomeFetch(searchTerm)
 
     if (err) return <div>Something went wrong</div>
     if (!movies[0]) return <Spinner />

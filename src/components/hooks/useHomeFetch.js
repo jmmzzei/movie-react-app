@@ -1,7 +1,7 @@
-import {useState, useEffect} from 'react'
-import {POPULAR_BASE_URL } from '../../config'
+import { useState, useEffect } from 'react'
+import { POPULAR_BASE_URL } from '../../config'
 
-export default () => {
+export default searchTerm => {
     const [state, setState] = useState({ movies: [] })
     const [loading, setLoading] = useState(false)
     const [err, setErr] = useState(false)
@@ -16,10 +16,10 @@ export default () => {
             const result = await (await fetch(endpoint)).json()
             setState(prev => ({
                 ...prev,
-                movies: 
+                movies:
                     isLoadMore !== -1
-                    ? [...prev.movies, ...result.results]
-                    : [...result.results],
+                        ? [...prev.movies, ...result.results]
+                        : [...result.results],
                 heroImage: prev.heroImage || result.results[0],
                 currentPage: result.page,
                 totalPages: result.total_pages
@@ -33,8 +33,19 @@ export default () => {
     }
 
     useEffect(() => {
-        fetchMovies(POPULAR_BASE_URL)
+        if (sessionStorage.homeState) {
+            setState(JSON.parse(sessionStorage.homeState))
+            setLoading(false)
+        } else {
+            fetchMovies(POPULAR_BASE_URL)
+        }
     }, [])
 
-    return [{state, loading, err}, fetchMovies] 
+    useEffect(() => {
+        if (!searchTerm) {
+            sessionStorage.setItem('homeState', JSON.stringify(state))
+        }
+    }, [searchTerm, state])
+
+    return [{ state, loading, err }, fetchMovies]
 }
