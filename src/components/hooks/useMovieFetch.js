@@ -3,7 +3,7 @@ import {API_URL, API_KEY} from '../../config'
 
 export default movieId => {
     const [state, setState] = useState({})
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
     const [err, setErr] = useState(false)
 
     const fetchData = useCallback(async () => {
