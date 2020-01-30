@@ -1,3 +1,4 @@
 import React from 'react'
+import { StyledSpinner } from '../styles/StyledSpinner'
 
-export default () => <div>Spinner</div>
+export default () => <StyledSpinner></StyledSpinner>
