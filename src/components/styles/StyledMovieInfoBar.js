@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
 export const StyledMovieInfoBar = styled.div`
   display: flex;
@@ -9,7 +9,7 @@ export const StyledMovieInfoBar = styled.div`
   background: #1c1c1c;
   padding: 20px;
   box-sizing: border-box;
-  font-family: 'Abel', sans-serif;
+  font-family: "Abel", sans-serif;
   font-size: 20px;
 
   .movieinfobar-content {
@@ -53,4 +53,4 @@ export const StyledMovieInfoBar = styled.div`
   @media screen and (max-width: 425px) {
     font-size: 14px;
   }
-`;
+`

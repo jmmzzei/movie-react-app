@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
 export const StyledSearchBar = styled.div`
   width: 100%;
@@ -7,7 +7,7 @@ export const StyledSearchBar = styled.div`
   padding: 25px 20px 0px 20px;
   box-sizing: border-box;
   color: #fff;
-`;
+`
 
 export const StyledSearchBarContent = styled.div`
   max-width: 1280px;
@@ -28,7 +28,7 @@ export const StyledSearchBarContent = styled.div`
   }
 
   input {
-    font-family: 'Abel', sans-serif;
+    font-family: "Abel", sans-serif;
     font-size: 28px;
     position: absolute;
     left: 0px;
@@ -49,4 +49,4 @@ export const StyledSearchBarContent = styled.div`
       font-size: 28px;
     }
   }
-`;
+`

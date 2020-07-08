@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
 export const StyledNavigation = styled.div`
   display: flex;
@@ -15,7 +15,7 @@ export const StyledNavigation = styled.div`
     width: 100%;
 
     p {
-      font-family: 'Abel', sans-serif;
+      font-family: "Abel", sans-serif;
       font-size: 22px;
       float: left;
       color: #fff;
@@ -27,4 +27,4 @@ export const StyledNavigation = styled.div`
       }
     }
   }
-`;
+`

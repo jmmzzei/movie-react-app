@@ -1,7 +1,11 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
-export const StyledHeroImage = styled.div`
-  background: ${props =>
+type StyledHeroImageProps = {
+  image?: string
+}
+
+export const StyledHeroImage = styled.div<StyledHeroImageProps>`
+  background: ${(props) =>
     `linear-gradient(
       to bottom, rgba(0,0,0,0)
       39%,rgba(0,0,0,0)
@@ -33,7 +37,7 @@ export const StyledHeroImage = styled.div`
     color: #fff;
 
     h1 {
-      font-family: 'Abel', sans-serif;
+      font-family: "Abel", sans-serif;
       font-size: 48px;
       color: #fff;
 
@@ -44,7 +48,7 @@ export const StyledHeroImage = styled.div`
     }
 
     p {
-      font-family: 'Abel', sans-serif;
+      font-family: "Abel", sans-serif;
       font-size: 22px;
       line-height: 26px;
       color: #fff;
@@ -69,4 +73,4 @@ export const StyledHeroImage = styled.div`
       opacity: 1;
     }
   }
-`;
+`
