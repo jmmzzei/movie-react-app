@@ -1,9 +1,9 @@
-import React from "react";
+import React, { FC } from "react";
 import NoImage from "../images/no_image.jpg";
 import { IMAGE_BASE_URL, POSTER_SIZE } from "../../config";
 import { StyledActor } from "../styles/StyledActor";
 
-interface IActor {
+export interface IActor {
   actor: {
     name: string;
     profile_path: string;
@@ -11,7 +11,7 @@ interface IActor {
   };
 }
 
-export const Actor: React.FC<IActor> = ({ actor }) => (
+export const Actor: FC<IActor> = ({ actor }) => (
   <StyledActor>
     <img
       alt="actor-thumb"

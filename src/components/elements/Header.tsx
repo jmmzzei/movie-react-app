@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 
 import RMDBLogo from "../images/reactMovie_logo.png";
 import TMDBLogo from "../images/tmdb_logo.svg";
@@ -10,7 +10,7 @@ import {
   StyledTMDBLogo,
 } from "../styles/StyledHeader";
 
-export const Header: React.FC<{}> = () => (
+export const Header: FC<{}> = () => (
   <StyledHeader>
     <div className="header-content">
       <Link to="/">

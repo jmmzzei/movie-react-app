@@ -7,13 +7,7 @@ import { Grid } from "./elements/Grid";
 import Spinner from "./elements/Spinner";
 import { useMovieFetch } from "./hooks/useMovieFetch";
 
-interface ITest {
-  movie: object;
-  loading: boolean;
-  err: boolean;
-}
-
-export const Movie: React.FC<any> = ({ movieId }) => {
+export const Movie: FC<any> = ({ movieId }) => {
   let { loading, err, movie } = useMovieFetch(movieId);
   console.log(movie);
   if (err) return <div>Something went wrong</div>;

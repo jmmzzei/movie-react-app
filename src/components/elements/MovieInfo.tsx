@@ -3,13 +3,14 @@ import NoImage from "../images/no_image.jpg";
 import { IMAGE_BASE_URL, POSTER_SIZE } from "../../config";
 import { MovieThumb } from "./MovieThumb";
 import { StyledMovieInfo } from "../styles/StyledMovieInfo";
+import { IActor } from "./Actor";
 
 export interface MovieProps {
-  movie: {
+  movie?: {
     title: string;
     backdrop_path: string;
     overview: string;
-    vote_average: any;
+    vote_average: string;
     poster_path: string;
     directors: [
       {
@@ -17,8 +18,16 @@ export interface MovieProps {
         name: string;
       }
     ];
-    [key: string]: unknown;
+    original_title: string;
+    runtime: string;
+    budget: string;
+    revenue: string;
+    actors?: [IActor];
   };
+  original_title?: string;
+  runtime?: string;
+  budget?: string;
+  revenue?: string;
 }
 
 export const MovieInfo: FC<MovieProps> = ({ movie }) => (

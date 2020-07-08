@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import { Link } from "@reach/router";
 import { StyledNavigation } from "../styles/StyledNavigation";
 
@@ -6,7 +6,7 @@ type NavProps = {
   movie: string;
 };
 
-export const Navigation: React.FC<NavProps> = ({ movie }) => (
+export const Navigation: FC<NavProps> = ({ movie }) => (
   <StyledNavigation>
     <div className="navigation-content">
       <Link to="/">

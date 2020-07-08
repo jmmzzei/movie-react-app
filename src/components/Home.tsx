@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, FC } from "react";
 import {
   POPULAR_BASE_URL,
   SEARCH_BASE_URL,
@@ -16,7 +16,7 @@ import { MovieThumb } from "./elements/MovieThumb";
 import useHomeFetch from "./hooks/useHomeFetch";
 import NoImage from "./images/no_image.jpg";
 
-export const Home: React.FC<RouteComponentProps<{}>> = () => {
+export const Home: FC<RouteComponentProps<{}>> = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [
     {

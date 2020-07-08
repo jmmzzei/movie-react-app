@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import { StyledHeroImage } from "../styles/StyledHeroImage";
 
 type HeroImageProps = {
@@ -7,7 +7,7 @@ type HeroImageProps = {
   title: string;
 };
 
-export const HeroImage: React.FC<HeroImageProps> = ({ image, text, title }) => (
+export const HeroImage: FC<HeroImageProps> = ({ image, text, title }) => (
   <StyledHeroImage image={image}>
     <>
       <div className="heroimage-content">

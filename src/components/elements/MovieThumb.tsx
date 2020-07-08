@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import { StyledMovieThumb } from "../styles/StyledMovieThumb";
 import { Link } from "@reach/router";
 
@@ -9,7 +9,7 @@ type MovieThumbProps = {
   clickable: boolean;
 };
 
-export const MovieThumb: React.FC<MovieThumbProps> = ({
+export const MovieThumb: FC<MovieThumbProps> = ({
   image,
   movieId,
   clickable,
