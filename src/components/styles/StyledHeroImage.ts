@@ -1,8 +1,8 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 type StyledHeroImageProps = {
-  image?: string
-}
+  image?: string;
+};
 
 export const StyledHeroImage = styled.div<StyledHeroImageProps>`
   background: ${(props) =>
@@ -73,4 +73,4 @@ export const StyledHeroImage = styled.div<StyledHeroImageProps>`
       opacity: 1;
     }
   }
-`
+`;

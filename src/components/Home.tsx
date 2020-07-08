@@ -1,54 +1,51 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 import {
   POPULAR_BASE_URL,
   SEARCH_BASE_URL,
   POSTER_SIZE,
   BACKDROP_SIZE,
   IMAGE_BASE_URL,
-} from "../config"
-import { RouteComponentProps } from "@reach/router"
-import { HeroImage } from "./elements/HeroImage"
-import Spinner from "./elements/Spinner"
-import SearchBar from "./elements/SearchBar"
-import { Grid } from "./elements/Grid"
-import LoadMoreBtn from "./elements/LoadMoreBtn"
-import { MovieThumb } from "./elements/MovieThumb"
-import useHomeFetch from "./hooks/useHomeFetch"
-import NoImage from "./images/no_image.jpg"
-
+} from "../config";
+import { RouteComponentProps } from "@reach/router";
+import { HeroImage } from "./elements/HeroImage";
+import Spinner from "./elements/Spinner";
+import SearchBar from "./elements/SearchBar";
+import { Grid } from "./elements/Grid";
+import LoadMoreBtn from "./elements/LoadMoreBtn";
+import { MovieThumb } from "./elements/MovieThumb";
+import useHomeFetch from "./hooks/useHomeFetch";
+import NoImage from "./images/no_image.jpg";
 
 export const Home: React.FC<RouteComponentProps<{}>> = () => {
-  const [searchTerm, setSearchTerm] = useState("")
+  const [searchTerm, setSearchTerm] = useState("");
   const [
     {
       loading,
       state: { movies, currentPage, totalPages, heroImage },
       err,
     },
-    {
-      fetchMovies
-    }
-  ] = useHomeFetch(searchTerm)
+    { fetchMovies },
+  ] = useHomeFetch(searchTerm);
 
-  if (err) return <div>Something went wrong</div>
-  
-  if (!movies[0]) return <Spinner />
+  if (err) return <div>Something went wrong</div>;
 
-  const searchMovies = search => {
-    const endpoint = search ? SEARCH_BASE_URL + search : POPULAR_BASE_URL
-    setSearchTerm(search)
-    fetchMovies(endpoint)
-  }
+  if (!movies[0]) return <Spinner />;
+
+  const searchMovies = (search) => {
+    const endpoint = search ? SEARCH_BASE_URL + search : POPULAR_BASE_URL;
+    setSearchTerm(search);
+    fetchMovies(endpoint);
+  };
 
   const loadMoreMovies = () => {
     const searchEndPoint = `${SEARCH_BASE_URL}${searchTerm}&page=${
       currentPage + 1
-    }`
-    const popularEndPoint = `${POPULAR_BASE_URL}&page=${currentPage + 1}`
+    }`;
+    const popularEndPoint = `${POPULAR_BASE_URL}&page=${currentPage + 1}`;
 
-    const endpoint = searchTerm ? searchEndPoint : popularEndPoint
-    fetchMovies(endpoint)
-  }
+    const endpoint = searchTerm ? searchEndPoint : popularEndPoint;
+    fetchMovies(endpoint);
+  };
 
   return (
     <>
@@ -62,7 +59,7 @@ export const Home: React.FC<RouteComponentProps<{}>> = () => {
 
       <SearchBar callback={searchMovies} />
       <Grid header={searchTerm ? "Search Result" : "Popular Movies"}>
-        {movies.map(movie => (
+        {movies.map((movie) => (
           <MovieThumb
             key={movie.id}
             clickable
@@ -81,5 +78,5 @@ export const Home: React.FC<RouteComponentProps<{}>> = () => {
         <LoadMoreBtn text="Load More" callback={loadMoreMovies} />
       )}
     </>
-  )
-}
+  );
+};

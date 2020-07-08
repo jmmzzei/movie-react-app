@@ -1,13 +1,9 @@
-import React from "react"
+import React from "react";
 
 interface INotFound {
-  default: boolean
+  default: boolean;
 }
 
-export const NotFound: React.FC<INotFound> = ({default:boolean}) => (<div>Nothing found here</div>)
-
-
-
-
-
-
+export const NotFound: React.FC<INotFound> = ({ default: boolean }) => (
+  <div>Nothing found here</div>
+);

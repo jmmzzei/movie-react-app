@@ -1,9 +1,9 @@
-import styled from "styled-components"
-import { IMAGE_BASE_URL, BACKDROP_SIZE } from "../../config"
+import styled from "styled-components";
+import { IMAGE_BASE_URL, BACKDROP_SIZE } from "../../config";
 
 type StyledMovieInfoProps = {
-  backdrop?: string
-}
+  backdrop?: string;
+};
 
 export const StyledMovieInfo = styled.div<StyledMovieInfoProps>`
   background: ${(props) =>
@@ -103,4 +103,4 @@ export const StyledMovieInfo = styled.div<StyledMovieInfoProps>`
       opacity: 1;
     }
   }
-`
+`;
