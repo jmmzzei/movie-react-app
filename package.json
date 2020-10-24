@@ -27,7 +27,7 @@
     "react-scripts": "^3.4.3",
     "serialize-javascript": "^3.1.0",
     "styled-components": "^5.2.0",
-    "typescript": "^3.9.6"
+    "typescript": "^3.9.7"
   },
   "scripts": {
     "format": "prettier --write src/**/*.ts{,x}",
